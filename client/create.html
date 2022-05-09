@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Asset Assistant</title>
+</head>
+<body>
+
+    
+    <header>
+        <nav>
+            <button id="next" onclick="document.location='display.html'">SEE MY STUFF</button>
+        </nav>
+        <h1>WELCOME TO THE ASSET ASSISTANT</h1>
+        <h2>Now let's get organized!</h2>
+    </header>
+
+    <section>
+        <form id="location" class="create">
+            <input id="location-input" type="text" placeholder="Location name (required)" size="50" maxlength="100"/>
+            <p id="location-text">This can be any location, e.g., garage, pantry, storage unit, etc.</p>
+            <p id="location-blank" class="hide" style="color:darkred">Please specify a locaion name.</p>
+
+            <input id="container-input" type="text" placeholder="Container name (required)" size="50" maxlength="100"/>
+            <p id="container-text">This can be any type of container within the above location, e.g., shelf, toolbox, cabinet, etc.</p>
+            <p id="container-blank" class="hide" style="color:darkred">Please specify a container name.</p>
+
+            <input id="subcontainer-input" type="text" placeholder="Subcontainer name (optional)" size="50" maxlength="100"/>
+            <p id="subcon-text">A container within the larger container above, e.g., drawer, bin, section, etc.</p>
+
+            <button id="location-submit">Submit</button>
+
+            <p id="location-success" style="color:lightseagreen"></p>
+            <p id="container-success" style="color:lightseagreen"></p>
+            <p id="subcon-success" style="color:lightseagreen"></p>
+        </form>
+    
+        <form id="item" class="create">
+            <input id="item-input" type="text" placeholder="Item" size="50" maxlength="100"/>
+            <p id="item-text">Any item stored in a previously designated container<br/> (you must create the container first)</p>
+            <p id="blank-item" class="hide" style="color:darkred">Please specify an item.</p>
+
+            <input id="description-input" type="text" placeholder="Item description (optional)" size="50" maxlength="100"/>
+            <p id="description-text">Destiguishing characteristics of the item, e.g., color, serial number, size, etc.</p>
+
+            <input id="existing-location" type="text" placeholder="Location name" size="50" maxlength="100"/>
+            <p id="location-text2">A previously designated location</p>
+            <p id="blank-location" class="hide" style="color:darkred">Please specify a location.</p>
+            <p id="bad-location" class="hide" style="color:darkred">This location doesn't exist yet. Please create it first.</p>
+
+
+            <input id="existing-container" type="text" placeholder="Container name" size="50" maxlength="100"/>
+            <p id="container-text2">A previously designated container within the location above</p>
+            <p id="blank-container" class="hide" style="color:darkred">Please specify a container.</p>
+            <p id="bad-container" class="hide" style="color:darkred">This container doesn't exist yet. Please create it first.</p>
+
+            <input id="existing-subcontainer" type="text" placeholder="Subcontainer name (optional)" size="50" maxlength="100"/>
+            <p id="subcon-text2">A previously designated subcontainer within the container above</p>
+            <p id="bad-subcon" class="hide" style="color:darkred">This subcontainer doesn't exist yet. Please create it first.</p>
+
+            <button id="item-submit">Submit</button>
+
+            <p id="bad-place" class="hide" style="color:darkred">That combination doesn't work.</p>
+        </form>
+    </section>
+
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="./create.js"></script> 
+    
+</body>
+</html>

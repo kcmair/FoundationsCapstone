@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Asset Assistant</title>
+</head>
+<body>
+    <nav>
+        <button id="next" onclick="document.location='create.html'">BACK TO CREATE</button>
+    </nav>
+
+    <header>
+        <h1>ASSET ASSISTANT</h1>
+        <h2>Here's all your stuff!</h2>
+    </header>
+   
+    <section>
+        <form id="look-locations">
+            <h4>Type in the names of your locations and containers to see the items you have stored inside them.</h4>
+            <input id="look-location" placeholder="Location"/>
+            <input id="look-container" placeholder="Container"/>
+            <input id="look-subcon" placeholder="Subcontainer"/>
+            <button>Submit</button>
+            <div id="see-items" class="see">
+                <p>Items:</p>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <form id="look-items">
+            <h4>Or, type in the name of an item you are searching for to see where it's located.</h4>
+            <input id="look-item" placeholder="Item"/>
+            <button>Submit</button>
+            <div id="see-location" class="see">
+                <p>Location:</p>
+            </div>
+        </form>
+    </section>
+
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="./display.js"></script> 
+
+</body>
+</html>

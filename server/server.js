@@ -1,0 +1,26 @@
+require('dotenv').config()
+const express = require('express')
+const app = express()
+const cors = require('cors')
+const {SERVER_PORT} = process.env
+const {createLocation, createContainer, createSubcontainer, createJoinTable, getLocations, getContainers, getSubcontainers, getJoinTable, createItem, seeItems, getLocation, itemTable, getContainer, getSub} = require('./controller.js')
+
+app.use(express.json())
+app.use(cors())
+
+app.post('/create_location', createLocation)
+app.post('/create_container', createContainer)
+app.post('/create_subcontainer', createSubcontainer)
+app.post('/create_join_table', createJoinTable)
+app.get('/get_locations', getLocations)
+app.get('/get_containers', getContainers)
+app.get('/get_subcontainers', getSubcontainers)
+app.get('/get_join_table', getJoinTable)
+app.post('/create_item', createItem)
+app.get('/see_items', seeItems)
+app.get('/get_location', getLocation)
+app.get('/item_table', itemTable)
+app.get('get_container', getContainer)
+app.get('get_sub', getSub)
+
+app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`))
